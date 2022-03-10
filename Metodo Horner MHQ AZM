@@ -1,0 +1,760 @@
+/*LAB#2 Huallpa Quino Mauricio R.
+        Zambrana Morales Ana Paola
+        c)Metodo Horner*/
+        
+#include<iostream>
+#include<stdlib.h>
+#include<math.h>
+
+using namespace std;
+
+int main()
+{
+	int grado1, grado2, grado3, opcion1, opcion2;
+	float A, B, C, D, E, F, G;
+	float M, N, O, P, Q, R, S;
+	float a, b, c, d, e, f, g, h, i, j;
+	float r1, r2, r3, r4, r5, r6, r7, r8;
+	
+	cout<<"\nLab#2 Huallpa Quino Mauricio Rodrigo\n";
+	cout<<"      Zambrana Morales Ana Paola\n";
+	cout<<"Resolucion por Metodo de Horner\n\n";
+	cout<<"Introducir Grado del Dividendo\n";
+	cout<<"Grado del dividendo: " ; cin>> grado1 ;
+	switch(grado1)//Introducimos el grado del dividendo//
+	{
+		case 1:
+			cout<<"\n introducir coheficientes del dividendo ( Ax + B )\n";
+			cout<<"A: " ; cin>> A;
+			cout<<"B: "	; cin>> B;
+			cout<<"introducir coheficiente del divisor M \n";
+			cout<<"M: " ; cin>> M;
+			r1= A/M;
+			r2= B/M;
+			cout<<"el cociente es: "<<r1<<"x "<<r2<<endl;
+			cout<<"No hay residuo";
+			cout<<"\nDesea hacer otra operacion?";
+			cout<<"\n1- SI";
+			cout<<"\n2- NO";
+			cout<<"\n";
+			cin>> opcion1;
+			cout<< "\n";
+			if (opcion1 ==1)
+			{
+				return main();
+			}
+			else;
+			{
+				return 0;
+			}
+		case 2:
+			cout<<"\nintroducir el Grado del divisor(0-1)\n";
+			cout<<"Grado del divisor: " ; cin>> grado2 ;
+			switch(grado2)
+			{
+				case 0:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^2 + Bx + C )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"introducir coheficiente del divisor M \n";
+					cout<<"M: " ; cin>> M;
+					r1= A/M;
+					r2= B/M;
+					r3= C/M;
+					cout<<"el cociente es: "<<r1<<"x^2 "<<r2<<"x "<<r3<<endl;
+					cout<<"No hay residuo";
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 1:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^2 + Bx + C )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"introducir coheficientes del divisor ( Mx + N ) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= C+r2*(-N);
+					cout<<"el cociente es: "<<r1<<"x "<<r2<<endl;
+					cout<<"El residuo es: "<<r3<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+			}
+		case 3:
+			cout<<"\nintroducir el Grado del divisor(0-2)\n";
+			cout<<"Grado del divisor: " ; cin>> grado2 ;
+			switch(grado2)
+			{
+				case 0:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^3 + Bx^2 + Cx + D )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"introducir coheficiente del divisor M \n";
+					cout<<"M: " ; cin>> M;
+					r1= A/M;
+					r2= B/M;
+					r3= C/M;
+					r4= D/M;
+					cout<<"el cociente es: "<<r1<<"x^3 "<<r2<<"x^2 "<<r3<<"x"<<r4<<endl;
+					cout<<"No hay residuo";
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 1:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^3 + Bx^2 + Cx + D )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"introducir coheficientes del divisor ( Mx + N ) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= (C+r2*(-N))/M;
+					r4= D+r3*(-N);
+					cout<<"el cociente es: "<<r1<<"x^2 "<<r2<<"x "<<r3<<endl;
+					cout<<"El residuo es: "<<r4<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 2:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^3 + Bx^2 + Cx + D )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"introducir coheficientes del divisor ( Mx^2 + Nx + O) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					cout<<"O: " ; cin>> O;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= C+r1*(-O)+r2*(-N);
+					r4= D+r2*(-O);
+					cout<<"el cociente es: "<<r1<<"x "<<r2<<endl;
+					cout<<"El residuo es: "<<r3<<"x "<<r4<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+
+			}
+		case 4:
+			cout<<"\nintroducir el Grado del divisor(0-3)\n";
+			cout<<"Grado del divisor: " ; cin>> grado2 ;
+			switch(grado2)
+			{
+				case 0:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^4 + Bx^3 + Cx^2 + Dx + E )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"introducir coheficiente del divisor M \n";
+					cout<<"M: " ; cin>> M;
+					r1= A/M;
+					r2= B/M;
+					r3= C/M;
+					r4= D/M;
+					r5= E/M;
+					cout<<"el cociente es: "<<r1<<"x^4 "<<r2<<"x^3 "<<r3<<"x^2 "<<r4<<"x "<<r5<<endl;
+					cout<<"No hay residuo";
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 1:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^4 + Bx^3 + Cx^2 + Dx + E )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"introducir coheficientes del divisor ( Mx + N ) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= (C+r2*(-N))/M;
+					r4= (D+r3*(-N))/M;
+					r5= E+r4*(-N);
+					cout<<"el cociente es: "<<r1<<"x^3 "<<r2<<"x^2 "<<r3<<"x "<<r4<<endl;
+					cout<<"El residuo es: "<<r5<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 2:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^4 + Bx^3 + Cx^2 + Dx + E )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"introducir coheficientes del divisor ( Mx^2 + Nx + O) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					cout<<"O: " ; cin>> O;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= (C+r1*(-O)+r2*(-N))/M;
+					r4= D+r2*(-O)+r3*(-N);
+					r5= E+r3*(-O);
+					cout<<"el cociente es: "<<r1<<"x^2 "<<r2<<"x "<<r3<<endl;
+					cout<<"El residuo es: "<<r4<<"x "<<r5<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 3:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^4 + Bx^3 + Cx^2 + Dx + E )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"introducir coheficientes del divisor ( Mx^3 + Nx^2 + Ox + P) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					cout<<"O: " ; cin>> O;
+					cout<<"P: " ; cin>> P;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= C+r1*(-O)+r2*(-N);
+					r4= D+r1*(-P)+r2*(-O);
+					r5= E+r2*(-P);
+					cout<<"el cociente es: "<<r1<<"x "<<r2<<endl;
+					cout<<"El residuo es: "<<r3<<"x^2 "<<r4<<"x "<<r5<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}	
+			}
+		case 5:
+			cout<<"\nintroducir el Grado del divisor(0-4)\n";
+			cout<<"Grado del divisor: " ; cin>> grado2 ;
+			switch(grado2)
+			{
+				case 0:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^5 + Bx^4 + Cx^3 + Dx^2 + Ex + F )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"F: "	; cin>> F;
+					cout<<"introducir coheficiente del divisor M \n";
+					cout<<"M: " ; cin>> M;
+					r1= A/M;
+					r2= B/M;
+					r3= C/M;
+					r4= D/M;
+					r5= E/M;
+					r6= F/M;
+					cout<<"el cociente es: "<<r1<<"x^5 "<<r2<<"x^4 "<<r3<<"x^3 "<<r4<<"x^2 "<<r5<<"x "<<r6<<endl;
+					cout<<"No hay residuo";
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 1:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^5 + Bx^4 + Cx^3 + Dx^2 + Ex + F )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"F: "	; cin>> F;
+					cout<<"introducir coheficientes del divisor ( Mx + N ) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= (C+r2*(-N))/M;
+					r4= (D+r3*(-N))/M;
+					r5= (E+r4*(-N))/M;
+					r6= F+r5*(-N);
+					cout<<"el cociente es: "<<r1<<"x^4 "<<r2<<"x^3 "<<r3<<"x^2 "<<r4<<"x "<<r5<<endl;
+					cout<<"El residuo es: "<<r6<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 2:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^5 + Bx^4 + Cx^3 + Dx^2 + Ex + F )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"F: "	; cin>> F;
+					cout<<"introducir coheficientes del divisor ( Mx^2 + Nx + O) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					cout<<"O: " ; cin>> O;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= (C+r1*(-O)+r2*(-N))/M;
+					r4= (D+r2*(-O)+r3*(-N))/M;
+					r5= E+r3*(-O)+r4*(-N);
+					r6= F+r4*(-O);
+					cout<<"el cociente es: "<<r1<<"x^3 "<<r2<<"x^2 "<<r3<<"x "<<r4<<endl;
+					cout<<"El residuo es: "<<r5<<"x "<<r6<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 3:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^5 + Bx^4 + Cx^3 + Dx^2 + Ex + F )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"F: "	; cin>> F;
+					cout<<"introducir coheficientes del divisor ( Mx^3 + Nx^2 + Ox + P) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					cout<<"O: " ; cin>> O;
+					cout<<"P: " ; cin>> P;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= (C+r1*(-O)+r2*(-N))/M;
+					r4= D+r1*(-P)+r2*(-O)+r3*(-N);
+					r5= E+r2*(-P)+r3*(-O);
+					r6= F+r3*(-P);
+					cout<<"el cociente es: "<<r1<<"x^2 "<<r2<<"x "<<r3<<endl;
+					cout<<"El residuo es: "<<r4<<"x^2 "<<r5<<"x "<<r6<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 4:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^5 + Bx^4 + Cx^3 + Dx^2 + Ex + F )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"F: "	; cin>> F;
+					cout<<"introducir coheficientes del divisor ( Mx^4 + Nx^3 + Ox^2 + Px + Q) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					cout<<"O: " ; cin>> O;
+					cout<<"P: " ; cin>> P;
+					cout<<"Q: " ; cin>> Q;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= C+r1*(-O)+r2*(-N);
+					r4= D+r1*(-P)+r2*(-O);
+					r5= E+r1*(-Q)+r2*(-P);
+					r6= F+r2*(-Q);
+					cout<<"el cociente es: "<<r1<<"x "<<r2<<endl;
+					cout<<"El residuo es: "<<r3<<"x^3 "<<r4<<"x^2 "<<r5<<"x "<<r6<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}		
+			}
+		case 6:
+			cout<<"\nintroducir el Grado del divisor(0-5)\n";
+			cout<<"Grado del divisor: " ; cin>> grado2 ;
+			switch(grado2)
+			{
+				case 0:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^6 + Bx^5 + Cx^4 + Dx^3 + Ex^2 + Fx + G )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"F: "	; cin>> F;
+					cout<<"G: "	; cin>> G;
+					cout<<"introducir coheficiente del divisor M \n";
+					cout<<"M: " ; cin>> M;
+					r1= A/M;
+					r2= B/M;
+					r3= C/M;
+					r4= D/M;
+					r5= E/M;
+					r6= F/M;
+					r7= G/M;
+					cout<<"el cociente es: "<<r1<<"x^6 "<<r2<<"x^5 "<<r3<<"x^4 "<<r4<<"x^3 "<<r5<<"x^2 "<<r6<<"x "<<r7<<endl;
+					cout<<"No hay residuo";
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 1:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^6 + Bx^5 + Cx^4 + Dx^3 + Ex^2 + Fx + G )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"F: "	; cin>> F;
+					cout<<"G: "	; cin>> G;
+					cout<<"introducir coheficientes del divisor ( Mx + N ) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= (C+r2*(-N))/M;
+					r4= (D+r3*(-N))/M;
+					r5= (E+r4*(-N))/M;
+					r6= (F+r5*(-N))/M;
+					r7= G+r6*(-N);
+					cout<<"el cociente es: "<<r1<<"x^5 "<<r2<<"x^4 "<<r3<<"x^3 "<<r4<<"x^2 "<<r5<<"x "<<r6<<endl;
+					cout<<"El residuo es: "<<r7<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 2:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^6 + Bx^5 + Cx^4 + Dx^3 + Ex^2 + Fx + G )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"F: "	; cin>> F;
+					cout<<"G: "	; cin>> G;
+					cout<<"introducir coheficientes del divisor ( Mx^2 + Nx + O) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					cout<<"O: " ; cin>> O;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= (C+r1*(-O)+r2*(-N))/M;
+					r4= (D+r2*(-O)+r3*(-N))/M;
+					r5= (E+r3*(-O)+r4*(-N))/M;
+					r6= F+r4*(-O)+r5*(-N);
+					r7= G+r5*(-O);
+					cout<<"el cociente es: "<<r1<<"x^4 "<<r2<<"x^3 "<<r3<<"x^2 "<<r4<<"x "<<r5<<endl;
+					cout<<"El residuo es: "<<r6<<"x "<<r7<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 3:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^6 + Bx^5 + Cx^4 + Dx^3 + Ex^2 + Fx + G )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"F: "	; cin>> F;
+					cout<<"G: "	; cin>> G;
+					cout<<"introducir coheficientes del divisor ( Mx^3 + Nx^2 + Ox + P) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					cout<<"O: " ; cin>> O;
+					cout<<"P: " ; cin>> P;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= (C+r1*(-O)+r2*(-N))/M;
+					r4= (D+r1*(-P)+r2*(-O)+r3*(-N))/M;
+					r5= E+r2*(-P)+r3*(-O)+r4*(-N);
+					r6= F+r3*(-P)+r4*(-O);
+					r7= G+r4*(-P);
+					cout<<"el cociente es: "<<r1<<"x^3 "<<r2<<"x^2 "<<r3<<"x "<<r4<<endl;
+					cout<<"El residuo es: "<<r5<<"x^2 "<<r6<<"x "<<r7<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 4:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^6 + Bx^5 + Cx^4 + Dx^3 + Ex^2 + Fx + G )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"F: "	; cin>> F;
+					cout<<"G: "	; cin>> G;
+					cout<<"introducir coheficientes del divisor ( Mx^4 + Nx^3 + Ox^2 + Px + Q) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					cout<<"O: " ; cin>> O;
+					cout<<"P: " ; cin>> P;
+					cout<<"Q: " ; cin>> Q;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= (C+r1*(-O)+r2*(-N))/M;
+					r4= D+r1*(-P)+r2*(-O)+r3*(-N);
+					r5= E+r1*(-Q)+r2*(-P)+r3*(-O);
+					r6= F+r2*(-Q)+r3*(-P);
+					r7= G+r3*(-Q);
+					cout<<"el cociente es: "<<r1<<"x^2 "<<r2<<"x "<<r3<<endl;
+					cout<<"El residuo es: "<<r4<<"x^3 "<<r5<<"x^2 "<<r6<<"x "<<r7<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}
+				case 5:
+					cout<<"\n introducir coheficientes del dividendo ( Ax^6 + Bx^5 + Cx^4 + Dx^3 + Ex^2 + Fx + G )\n";
+					cout<<"A: " ; cin>> A;
+					cout<<"B: "	; cin>> B;
+					cout<<"C: "	; cin>> C;
+					cout<<"D: "	; cin>> D;
+					cout<<"E: "	; cin>> E;
+					cout<<"F: "	; cin>> F;
+					cout<<"G: "	; cin>> G;
+					cout<<"introducir coheficientes del divisor ( Mx^5 + Nx^4 + Ox^3 + Px^2 + Qx + R ) \n";
+					cout<<"M: " ; cin>> M;
+					cout<<"N: " ; cin>> N;
+					cout<<"O: " ; cin>> O;
+					cout<<"P: " ; cin>> P;
+					cout<<"Q: " ; cin>> Q;
+					cout<<"R: " ; cin>> R;
+					r1= A/M;
+					r2= (B+r1*(-N))/M;
+					r3= C+r1*(-O)+r2*(-N);
+					r4= D+r1*(-P)+r2*(-O);
+					r5= E+r1*(-Q)+r2*(-P);
+					r6= F+r1*(-R)+r2*(-Q);
+					r7= G+r2*(-R);
+					cout<<"el cociente es: "<<r1<<"x "<<r2<<endl;
+					cout<<"El residuo es: "<<r3<<"x^4 "<<r4<<"x^3 "<<r5<<"x^2 "<<r6<<"x "<<r7<<endl;
+					
+					cout<<"\nDesea hacer otra operacion?";
+					cout<<"\n1- SI";
+					cout<<"\n2- NO";
+					cout<<"\n";
+					cin>> opcion1;
+					cout<< "\n";
+					if (opcion1 ==1)
+					{
+						return main();
+					}
+					else;
+					{
+						return 0;
+					}	
+			}
+			
+
+	}
+return 0;
+}

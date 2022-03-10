@@ -1,0 +1,80 @@
+/*LAB#2 Huallpa Quino Mauricio R.
+        Zambrana Morales Ana Paola
+        c)Metodo Horner*/
+        
+#include<iostream>
+#include<math.h>
+
+using namespace std;
+
+int main()
+{
+	float A, B, C, D, E, F, Divisor, X, Y;
+	int b;
+	
+	
+	cout<<"\nLab#2 Huallpa Quino Mauricio Rodrigo\n";
+	cout<<"      Zambrana Morales Ana Paola\n";
+	cout<<"\n";
+	cout<<"Este programa puede resolver sistemas de ecuaciones lineales con 2 incognitas\n";
+	cout<<"las ecuaciones tienen que estar de la forma\n";
+	cout<<"\n";
+	cout<<"              Ax + By = C \n";
+	cout<<"              Dx + Ey = F \n";
+	cout<<" A: " ; cin>> A;
+	cout<<" B: " ; cin>> B;
+	cout<<" C: " ; cin>> C;
+	cout<<" D: " ; cin>> D;
+	cout<<" E: " ; cin>> E;
+	cout<<" F: " ; cin>> F;
+	
+	Divisor=(A*E)-(B*D);
+	
+	if(Divisor==0)
+	{
+		cout<<"No hay Solucion\n";
+		cout<<"Desea hacer otra operacion?\n";
+		cout<<"\n1- SI";
+		cout<<"\n2- NO";
+		cout<<"\n";
+		cin>> b;
+		cout<< "\n";
+		if (b ==1)
+		{
+			return main();
+		}
+		else;
+		{
+			return 0;
+		}
+	}
+	else(Divisor!=0);
+	{
+		X=(C*E - B*F)/(Divisor);
+		Y=(C*D - A*F)/(Divisor);
+		cout<<"El valor de X es :"<<X<<endl;
+		cout<<"El valor de Y es :"<<Y<<endl;
+		cout<<"\nDesea hacer otra operacion?\n";
+		cout<<"\n1- SI";
+		cout<<"\n2- NO";
+		cout<<"\n";
+		cin>> b;
+		cout<< "\n";
+		if (b ==1)
+		{
+			return main();
+		}
+		else;
+		{
+			return 0;
+		}		
+	}
+
+	
+
+	
+		
+	
+	
+	return 0;
+}

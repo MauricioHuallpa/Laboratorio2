@@ -51,7 +51,7 @@ int main()
 	else(Divisor!=0);
 	{
 		X=(C*E - B*F)/(Divisor);
-		Y=(C*D - A*F)/(Divisor);
+		Y=(A*F - C*D)/(Divisor);
 		cout<<"El valor de X es :"<<X<<endl;
 		cout<<"El valor de Y es :"<<Y<<endl;
 		cout<<"\nDesea hacer otra operacion?\n";

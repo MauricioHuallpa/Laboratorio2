@@ -12,318 +12,230 @@ using namespace std;
 
 int main()
 {
-
 	int a, b, c, d, e, f;
 	float j, h, Area, P;
-	float A, B, C;
-	double x, y, z,S;
-	double M1,M2,M3;
-	
+	double A, B, C, R;
+	double X, Y, Z,S;
+	double AngX, AngY, AngZ;
+	double AuxX, AuxY, AuxZ;
+	double MA,MB,MC;
 	cout<<"\nLab#2 Huallpa Quino Mauricio Rodrigo \n";
 	cout<<"      Zambrana Morales Ana Paola \n";
-	cout<<"a). Resolucion de triangulos \n";
-	do
+	cout<<"a). Resolucion de triangulos \n\n";
+	cout<< "                *\n";
+	cout<< "               *  * \n";
+	cout<< "              * X'  * \n";
+	cout<< "             *        * \n";
+	cout<< "            *           *  B \n";
+	cout<< "        C  *              *  \n";
+	cout<< "          *                 *  \n";
+	cout<< "         *                    *  \n";
+	cout<< "        * Y'                  Z'* \n";
+	cout<< "       * * * * * * * * * * * * * * \n";
+	cout<< "                   A  \n";
+	cout<< "1- Introducir 3 lados \n";
+	cout<< "2- Introducir 3 angulos \n";
+	cout<< "3- Introducir 2 lados y 1 angulo \n";
+	cout<< "4- Introducir 2 angulos y un lado \n";
+	cout<< "5- Salir \n";
+	cin>> a;
+	system("cls");
+	switch(a)
 	{
-		cout<< "introduzca el numero correspondiente a la operacion que desea \n";
-		cout<< "1- ley de cosenos \n";
-		cout<< "2- ley de senos \n";
-		cout<< "3- Area de un triangulo \n";
-		cout<< "4- Perimetro de un triangulo \n";
-		cout<< "5- Longitud de las medianas \n";
-		cout<< "6- Salir \n";
-		cin>> a;
-		
-		switch(a)
-		{
-			case 1:
-				cout<< "Para la ley de cosenos necesitamos 2 lados (A y B) \n";
-				cout<< "y el angulo x que separa a estos para encontrar el lado C \n";
-				cout<< " A :"; cin>> A;
-				cout<< " B :"; cin>> B;
-				cout<< " x(angulo en sexagesimales) :"; cin>> x;
-				
-				C=sqrt((A*A)+(B*B)-2*A*B*cos(x*PI/180));
-				
-				cout<< "\n El lado C vale :  "<<C<<endl;
-				
-				cout<<"Desea hacer otra operacion?\n";
-				cout<<"\n1- SI";
-				cout<<"\n2- NO";
-				cout<<"\n";
-				cin>> b;
-				cout<< "\n";
-				if (b ==1)
-				{
-					return main();
-				}
-				else;
-				{
-					return 0;
-				}
-					
-			case 2:
-				cout<< "Para la ley de senos necesitamos inicialmente un lado A y su \n";
-				cout<< "angulo opuesto 'x' , tambien el lado B o el angulo 'y'que queremos \n";
-				cout<< "\nQue dato pondra?\n";
-				cout<< "1- Lado B \n";
-				cout<< "2- Angulo 'y'\n";
-				cin>>c;
-				cout<< "\n";
-				if (c ==1)
-				{
-					cout<<"introdusca el Lado B para hallar el angulo 'y'\n";
-					cout<< " B :"; cin>> B;
-					cout<< " A :"; cin>> A;
-					cout<< " x(angulo en sexagesimal):"; cin>> x;
-					y=(B/A)*sin(x*PI/180);
-					cout<< "\n El sen(y) vale :  "<<y<<endl;
-					
-					cout<<"Desea hacer otra operacion?\n";
-					cout<<"\n1- SI";
-					cout<<"\n2- NO";
-					cout<<"\n";
-					cin>> b;
-					cout<< "\n";
-					if (b ==1)
-					{
-						return main();
-					}
-					else;
-					{
-						return 0;
-					}
-				}
-				else;
-				{
-					cout<<"introdusca el angulo 'y' para hallar en Lado B\n";
-					cout<< " y(angulo en sexagesimales) :"; cin>> y;
-					cout<< " A :"; cin>> A;
-					cout<< " x(angulo en sexagesimal):"; cin>> x;
-					B=((sin(y*PI/180))/(sin(x*PI/180)))*A;
-					cout<< "\n El Lado B vale :  "<<B<<endl;
-					
-					cout<<"Desea hacer otra operacion?\n";
-					cout<<"\n1- SI";
-					cout<<"\n2- NO";
-					cout<<"\n";
-					cin>> b;
-					cout<< "\n";
-					if (b ==1)
-					{
-						return main();
-					}
-					else;
-					{
-						return 0;
-					}			
-				}
-				
-			case 3:
-				cout<< "Que metodo quiere usar para calcular el area\n";
-				cout<< "1- Base por altura\n";
-				cout<< "2- 1 angulo y 2 lados conocidos\n";
-				cout<< "3- Formula de Heron\n";
-				cin>> d;
-				
-				switch(d)
-				{
-					case 1:
-						cout<<"Para determinar el Area de un triangulo nececitamos \n";
-						cout<<"la base 'j' y la altura 'h'\n";
-						cout<<"j:" ; cin>> j;
-						cout<<"h:" ; cin>> h;
-						Area= (j*h)/2;
-						cout<<"El valor del Area es : "<<Area<<endl;
-						
-						cout<<"Desea hacer otra operacion?\n";
-						cout<<"\n1- SI";
-						cout<<"\n2- NO";
-						cout<<"\n";
-						cin>> b;
-						cout<< "\n";
-						if (b ==1)
-						{
-							return main();	
-						}
-						else;
-						{
-							return 0;	
-						}
-						
-					case 2:
-						cout<<"Para determinar el Area de un triangulo nececitamos \n";
-						cout<<"dos lados (A y B) y el angulo z que los separa\n";
-						cout<<"A:" ; cin>> A;
-						cout<<"B:" ; cin>> B;
-						cout<<"z(angulo en sexagesimal):" ; cin>> z;
-						Area= (A*B*sin(z*PI/180))/2;
-						cout<<"El valor del Area es : "<<Area<<endl;
-						
-						cout<<"Desea hacer otra operacion?\n";
-						cout<<"\n1- SI";
-						cout<<"\n2- NO";
-						cout<<"\n";
-						cin>> b;
-						cout<< "\n";
-						if (b ==1)
-						{
-							return main();	
-						}
-						else;
-						{
-							return 0;	
-						}
-					case 3:
-						cout<<"Para determinar el Area de un triangulo por la Formula de Heron \n";
-						cout<<"necesitamos los 3 lados del triangulo\n";
-						cout<<"A:" ; cin>> A;
-						cout<<"B:" ; cin>> B;
-						cout<<"C:" ; cin>> C;
-						S=(A+B+C)/2;
-						Area=sqrt(S*(S-A)*(S-B)*(S-C));
-						cout<<"El valor del Area es : "<<Area<<endl;
-						
-						cout<<"Desea hacer otra operacion?\n";
-						cout<<"\n1- SI";
-						cout<<"\n2- NO";
-						cout<<"\n";
-						cin>> b;
-						cout<< "\n";
-						if (b ==1)
-						{
-							return main();	
-						}
-						else;
-						{
-							return 0;	
-						}
-				}
-
-			case 4:
-				cout<< "Para calcular el perimetro necesitamos los 3 Lados \n";
-				cout<<"A:" ; cin>> A;
-				cout<<"B:" ; cin>> B;
-				cout<<"C:" ; cin>> C;
-				P=(A+B+C);
-				cout<<"El valor del Perimetro es : "<<P<<endl;
-				
-				cout<<"Desea hacer otra operacion?\n";
-				cout<<"\n1- SI";
-				cout<<"\n2- NO";
-				cout<<"\n";
-				cin>> b;
-				cout<< "\n";
-				if (b ==1)
-				{
-					return main();	
-				}
-				else;
-				{
-					return 0;	
-				}
-				
-			case 5:
-				cout<< "Para calcular la longitud de mediana de determinado lado";
-				cout<< "Primero necesitamos las longitudes de los 3 lados \n";
-				cout<< "para determinar su longitud mediante la formula de la mediana \n";
-				cout<< "Elija la Mediana respecto a que Lado quiere encontrar\n";
-				cout<< "1- M1(respecto a A)\n";
-				cout<< "2- M2(respecto a B)\n";
-				cout<< "3- M3(respecto a C)\n";
-				cin>> e;
-				
-				switch(e)
-				{
-					case 1:
-						cout<<"Para calcular M1 respecto a A necesitamos todos los lados \n";
-						cout<<"A:" ; cin>> A;
-						cout<<"B:" ; cin>> B;
-						cout<<"C:" ; cin>> C;
-						M1= ((sqrt(2*((B*B)+(C*C))-(A*A)))/2);
-						cout<<"El valor de la Madiana respecto a A es : "<<M1<<endl;
-						
-						cout<<"Desea hacer otra operacion?\n";
-						cout<<"\n1- SI";
-						cout<<"\n2- NO";
-						cout<<"\n";
-						cin>> b;
-						cout<< "\n";
-						if (b ==1)
-						{
-							return main();	
-						}
-						else;
-						{
-							return 0;	
-						}
-						
-					case 2:
-						cout<<"Para calcular M2 respecto a B necesitamos todos los lados \n";
-						cout<<"A:" ; cin>> A;
-						cout<<"B:" ; cin>> B;
-						cout<<"C:" ; cin>> C;
-						M2= ((sqrt(2*((A*A)+(C*C))-(B*B)))/2);
-						cout<<"El valor de la Madiana respecto a B es : "<<M2<<endl;
-						
-						cout<<"Desea hacer otra operacion?\n";
-						cout<<"\n1- SI";
-						cout<<"\n2- NO";
-						cout<<"\n";
-						cin>> b;
-						cout<< "\n";
-						if (b ==1)
-						{
-							return main();	
-						}
-						else;
-						{
-							return 0;	
-						}
-					case 3:
-						cout<<"Para calcular M3 respecto a C necesitamos todos los lados \n";
-						cout<<"A:" ; cin>> A;
-						cout<<"B:" ; cin>> B;
-						cout<<"C:" ; cin>> C;
-						M3= (sqrt(2*((A*A)+(B*B))-(C*C)))/2;
-						cout<<"El valor de la Madiana respecto a C es : "<<M3<<endl;
-						
-						cout<<"Desea hacer otra operacion?\n";
-						cout<<"\n1- SI";
-						cout<<"\n2- NO";
-						cout<<"\n";
-						cin>> b;
-						cout<< "\n";
-						if (b ==1)
-						{
-							return main();	
-						}
-						else;
-						{
-							return 0;	
-						}
-					
-				}
-				
-			case 6:
-				cout<< "Seguro que quieres Salir...?? \n";
-				cout<< "\n1- SI";
-				cout<< "\n2- NO\n";
-				cin>> f;
-				cout<< "\n";
-				if (f ==1)
-				{
-					return 0;
-				}
-				else;
-				{
-					return main();
-				}
-				break;
+		case 1:
+			cout<<"Introducir los 3 lados\n";
+			cout<<"Lado A: "; cin>> A;
+			cout<<"Lado B: "; cin>> B;
+			cout<<"Lado C: "; cin>> C;
+			AngX=(((B*B)+(C*C)-(A*A))/(2*B*C));
+			AngY=(((A*A)+(C*C)-(B*B))/(2*A*C));
+			AngZ=(((A*A)+(B*B)-(C*C))/(2*A*B));
+			AuxX=acos(AngX);
+			AuxY=acos(AngY);
+			AuxZ=acos(AngZ);
+			X= AuxX*180/PI;
+			Y= AuxY*180/PI;
+			Z= AuxZ*180/PI;
+			S=(A+B+C)/2;
+			Area=sqrt(S*(S-A)*(S-B)*(S-C));
+			P=(A+B+C);
+			MA= ((sqrt(2*((B*B)+(C*C))-(A*A)))/2);
+			MB= ((sqrt(2*((A*A)+(C*C))-(B*B)))/2);
+			MC= ((sqrt(2*((A*A)+(B*B))-(C*C)))/2);
+			cout<< "                *\n";
+			cout<< "               *  *                       Lado A = "<< A <<endl;
+			cout<< "              * X'  *                     Lado B = "<< B <<endl;
+			cout<< "             *        *                   Lado C = "<< C <<endl;
+			cout<< "            *           *  B              Angulo X = "<< X <<endl;
+			cout<< "        C  *              *               Angulo Y = "<< Y <<endl;
+			cout<< "          *                 *             Angulo Z = "<< Z <<endl;
+			cout<< "         *                    *           Area = "<< Area<< " u^2"<<endl;
+			cout<< "        * Y'        A         Z'*         Perimetro = "<< P<< " u"<<endl;
+			cout<< "       * * * * * * * * * * * * * *        MA = "<<MA<<"  MB = "<<MB<<"  MC = "<<MC<<endl;
+			cout<<"\nDesea hacer otra operacion?";
+			cout<<"\n1- SI";
+			cout<<"\n2- NO";
+			cout<<"\n";
+			cin>> b;
+			system("cls");
+			if (b ==1)
+			{
 				return main();
-				break;
 			}
-		}
-	while(a!=5);
-	system("pause");
-	return main();
+			else;
+			{
+				return 0;
+			}
+		case 2:
+			cout<<"Introducir los 3 angulos\n";
+			cout<<"Angulo X: "; cin>> X;
+			cout<<"Angulo Y: "; cin>> Y;
+			cout<<"Angulo Z: "; cin>> Z;
+			R=X+Y+Z;
+			if(R==180)
+			{
+				cout<<"Para el calculo introdusca almenos 1 lado\n";
+				cout<<"Lado A: "; cin>> A;
+				B=((sin(Y*PI/180))/(sin(X*PI/180)))*A;
+				C=((sin(Z*PI/180))/(sin(X*PI/180)))*A;
+				S=(A+B+C)/2;
+				Area=sqrt(S*(S-A)*(S-B)*(S-C));
+				P=(A+B+C);
+				MA= ((sqrt(2*((B*B)+(C*C))-(A*A)))/2);
+				MB= ((sqrt(2*((A*A)+(C*C))-(B*B)))/2);
+				MC= ((sqrt(2*((A*A)+(B*B))-(C*C)))/2);
+				cout<< "                *\n";
+				cout<< "               *  *                       Lado A = "<< A <<endl;
+				cout<< "              * X'  *                     Lado B = "<< B <<endl;
+				cout<< "             *        *                   Lado C = "<< C <<endl;
+				cout<< "            *           *  B              Angulo X = "<< X <<endl;
+				cout<< "        C  *              *               Angulo Y = "<< Y <<endl;
+				cout<< "          *                 *             Angulo Z = "<< Z <<endl;
+				cout<< "         *                    *           Area = "<< Area<< " u^2"<<endl;
+				cout<< "        * Y'        A         Z'*         Perimetro = "<< P<< " u"<<endl;
+				cout<< "       * * * * * * * * * * * * * *        MA = "<<MA<<"  MB = "<<MB<<"  MC = "<<MC<<endl;
+				cout<<"\nDesea hacer otra operacion?";
+				cout<<"\n1- SI";
+				cout<<"\n2- NO";
+				cout<<"\n";
+				cin>> b;
+				system("cls");
+				if (b ==1)
+				{
+					return main();
+				}
+				else;
+				{
+					return 0;
+				}
+			}
+			else;
+			{
+				cout<<"la suma de los angulos debe ser igual a 180 grados";
+				return main();
+			}
+		case 3:
+			cout<<"Introducir los 2 lados y 1 angulo\n";
+			cout<<"Lado A: "; cin>> A;
+			cout<<"Lado B: "; cin>> B;
+			cout<<"Angulo Z: "; cin>> Z;
+			C=sqrt((A*A)+(B*B)-2*A*B*cos(Z*PI/180));
+			AngX=(((B*B)+(C*C)-(A*A))/(2*B*C));
+			AngY=(((A*A)+(C*C)-(B*B))/(2*A*C));
+			AngZ=(((A*A)+(B*B)-(C*C))/(2*A*B));
+			AuxX=acos(AngX);
+			AuxY=acos(AngY);
+			AuxZ=acos(AngZ);
+			X= AuxX*180/PI;
+			Y= AuxY*180/PI;
+			Z= AuxZ*180/PI;	
+			S=(A+B+C)/2;
+			Area=sqrt(S*(S-A)*(S-B)*(S-C));
+			P=(A+B+C);
+			MA= ((sqrt(2*((B*B)+(C*C))-(A*A)))/2);
+			MB= ((sqrt(2*((A*A)+(C*C))-(B*B)))/2);
+			MC= ((sqrt(2*((A*A)+(B*B))-(C*C)))/2);
+			cout<< "                *\n";
+			cout<< "               *  *                       Lado A = "<< A <<endl;
+			cout<< "              * X'  *                     Lado B = "<< B <<endl;
+			cout<< "             *        *                   Lado C = "<< C <<endl;
+			cout<< "            *           *  B              Angulo X = "<< X <<endl;
+			cout<< "        C  *              *               Angulo Y = "<< Y <<endl;
+			cout<< "          *                 *             Angulo Z = "<< Z <<endl;
+			cout<< "         *                    *           Area = "<< Area<< " u^2"<<endl;
+			cout<< "        * Y'        A         Z'*         Perimetro = "<< P<< " u"<<endl;
+			cout<< "       * * * * * * * * * * * * * *        MA = "<<MA<<"  MB = "<<MB<<"  MC = "<<MC<<endl;
+			cout<<"\nDesea hacer otra operacion?";
+			cout<<"\n1- SI";
+			cout<<"\n2- NO";
+			cout<<"\n";
+			cin>> b;
+			system("cls");
+			if (b ==1)
+			{
+				return main();
+			}
+			else;
+			{
+				return 0;
+			}
+		case 4:
+			cout<<"Introducir los 2 Angulos y 1 Lado\n";
+			cout<<"Angulo X: "; cin>> X;
+			cout<<"Angulo Y: "; cin>> Y;
+			cout<<"Lado A: "; cin>> A;
+			B=((sin(Y*PI/180))/(sin(X*PI/180)))*A;
+			Z=(180-X-Y);
+			C=((sin(Z*PI/180))/(sin(X*PI/180)))*A;
+			S=(A+B+C)/2;
+			Area=sqrt(S*(S-A)*(S-B)*(S-C));
+			P=(A+B+C);
+			MA= ((sqrt(2*((B*B)+(C*C))-(A*A)))/2);
+			MB= ((sqrt(2*((A*A)+(C*C))-(B*B)))/2);
+			MC= ((sqrt(2*((A*A)+(B*B))-(C*C)))/2);
+			cout<< "                *\n";
+			cout<< "               *  *                       Lado A = "<< A <<endl;
+			cout<< "              * X'  *                     Lado B = "<< B <<endl;
+			cout<< "             *        *                   Lado C = "<< C <<endl;
+			cout<< "            *           *  B              Angulo X = "<< X <<endl;
+			cout<< "        C  *              *               Angulo Y = "<< Y <<endl;
+			cout<< "          *                 *             Angulo Z = "<< Z <<endl;
+			cout<< "         *                    *           Area = "<< Area<< " u^2"<<endl;
+			cout<< "        * Y'        A         Z'*         Perimetro = "<< P<< " u"<<endl;
+			cout<< "       * * * * * * * * * * * * * *        MA = "<<MA<<"  MB = "<<MB<<"  MC = "<<MC<<endl;
+			cout<<"\nDesea hacer otra operacion?";
+			cout<<"\n1- SI";
+			cout<<"\n2- NO";
+			cout<<"\n";
+			cin>> b;
+			system("cls");
+			if (b ==1)
+			{
+				return main();
+			}
+			else;
+			{
+				return 0;
+			}
+		case 5:
+			cout<< "Seguro que quieres Salir...?? \n";
+			cout<< "\n1- SI";
+			cout<< "\n2- NO\n";
+			cin>> f;
+			cout<< "\n";
+			if (f ==1)
+			{
+				return 0;
+			}
+			else;
+			{
+				return main();
+			}
+			break;
+			return main();
+			break;
+				
+		}	
+
+return 0;
 	}

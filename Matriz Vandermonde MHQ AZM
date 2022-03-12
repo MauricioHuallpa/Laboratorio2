@@ -1,0 +1,91 @@
+/*LAB#2 Huallpa Quino Mauricio R.
+        Zambrana Morales Ana Paola
+        b)Determinante de Matriz de Vandermonde*/
+
+#include<iostream>
+#include<conio.h>
+#include<cmath>
+#define MAX 20
+
+using namespace std;
+float determinante(float V[20][20],int n);
+
+int main()
+{
+	int a,n;
+	int opcion ;
+	float V[20][20], D[20], det;
+	
+	cout<<"\nLab#2 Huallpa Quino Mauricio Rodrigo \n";
+	cout<<"      Zambrana Morales Ana Paola \n";
+	cout<<"b). Determinante de Matriz de Vandermonde \n";
+	cout<<"\n  La Matriz de Vandermonde tiene la forma\n";
+	cout<<"     | v1^0   v2^0   v3^0    v4^0 .... vn^0 |\n";
+	cout<<"     | v1^1   v2^1   v3^1    v4^1 .... vn^1 |\n";
+	cout<<"     | v1^2   v2^2   v3^2    v4^2 .... vn^2 |\n";
+	cout<<"     | v1^3   v2^3   v3^3    v4^3 .... vn^3 |\n";
+	cout<<"     |   .      .      .       .         .  |\n";
+	cout<<"     |   .      .      .       .         .  |\n";
+	cout<<"     | v1^n   v2^n   v3^n    v4^n .... vn^n |\n";
+	cout<<"\n Introdusca la dimension n de la matriz : \n";
+	cout<<" n = "; cin>>n;
+	cout<<"\n Introdusca los valores v1,v2,v3....vn. \n";
+	for(int i=0;i<n;i++)
+	{
+		cout<<"  v"<<i+1<<"= ";//introduccion de datos//
+		cin>>D[i];
+	}
+	cout<<"La matriz generada es:\n";
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<n;j++)
+		{
+			cout<<"\t\t";//para ordenar matriz//
+			V[i][j]=pow(D[j],i);//funcion pow para construir la matriz//
+			cout<<V[i][j];
+		}
+		cout<<"\n";//para ordenar matriz//
+	}
+	
+	det=determinante(V,n);
+	cout<<"\n el valor de la determiante es :"<<det<<endl;
+	cout<<"Desea hacer otra operacion?\n";
+	cout<<"\n1- SI";
+	cout<<"\n2- NO";
+	cout<<"\n";
+	cin>> opcion;
+	system("cls");
+	cout<< "\n";
+	if (opcion ==1)
+	{
+		return main();
+	}
+	else;
+	{
+		return 0;
+	}
+	
+	return 0;
+}
+//para el calculo de la determinante//
+float determinante(float V[20][20],int n){
+	float aux, aux1, aux2, aux3,det=1;
+	for(int i=0;i<n;i++)
+	{
+		aux=V[i][i];
+		for(int j=i+1;j<n;j++)
+		{
+			aux1=V[j][i];
+			aux2=(aux1/aux);
+			for(int a=0;a<n;a++)
+			{
+				V[j][a]=V[j][a]-aux*V[i][a];
+			}
+	}	
+	}
+	for(int i=0;i<n;i++)
+	{
+		det=det*V[i][i];
+	}
+	return det;//retorno a funcion det//
+}
